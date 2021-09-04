@@ -10,7 +10,7 @@ const SearchShow = ({history}) => {
   const location = useLocation();
   const useMountEffect = (fun) => useEffect(fun, []);
   const octokit = new Octokit({
-    auth: "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",
+    auth: process.env.NEXT_PUBLIC_GITHUB_KEY,
   });
   const [search, setSearch] = useState();
 
