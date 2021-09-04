@@ -8,7 +8,7 @@ import ResultRow from "./components/ResultRow";
 
 const SearchShow = ({history}) => {
   const location = useLocation();
-  const useMountEffect = (fun) => useEffect(fun, []);
+  const useMountEffect = (fun) => useEffect(fun, [fun]);
   const octokit = new Octokit({
     auth: process.env.NEXT_PUBLIC_GITHUB_KEY,
   });
