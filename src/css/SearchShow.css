@@ -1,0 +1,5 @@
+.search-input form div {
+    display: flex;
+    margin: 30px auto;
+    text-align: center;
+}
