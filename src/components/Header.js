@@ -8,7 +8,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className={location.pathname.indexOf("search") > 0 && "results"}>
+    <header className={location.pathname.indexOf("search") > 0 ? "results" : ''}>
       {location && location.pathname === "/" && (
         <img
           className="header-logo"

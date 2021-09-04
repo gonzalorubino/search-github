@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 // Boostrap
 import Form from "react-bootstrap/Form";
@@ -16,7 +16,8 @@ library.add(faSearch);
 
 const SearchHome = ()=> {
     let history = useHistory();
-    const [value, setValue] = useState("");
+    const location = useLocation();
+    const [value, setValue] = useState(location.search ? location.search.slice(3) : '');
 
     const handleChange = (event) => {
         setValue(event.target.value);
