@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import SearchHome from "../SearchHome";
 
@@ -8,7 +8,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className={location.pathname.indexOf("search") > 0 && 'results'}>
+    <header className={location.pathname.indexOf("search") > 0 && "results"}>
       {location && location.pathname === "/" && (
         <img
           className="header-logo"
@@ -18,12 +18,13 @@ const Header = () => {
       )}
       {location && location.pathname.indexOf("search") > 0 && (
         <div>
-          <Link to='/'><img
-            className="header-logo"
-            src="./GithubLogo.png"
-            alt="Github Search Logo"
-            className="small-logo"
-          /></Link>
+          <Link to="/">
+            <img
+              className="header-logo small-logo"
+              src="./GithubLogo.png"
+              alt="Github Search Logo"
+            />
+          </Link>
           <SearchHome></SearchHome>
         </div>
       )}
