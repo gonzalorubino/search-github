@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Octokit } from "@octokit/core";
 
 import "./css/SearchShow.css";
+import Loading from "./components/Loading";
 
 const SearchShow = () => {
   const location = useLocation();
@@ -24,7 +25,13 @@ const SearchShow = () => {
 
   return (
     <div className="search-input row mt-5">
-      {search ? search.data.items.map((item)=> <a href={item.repository.url}>{item.repository.name}</a>) : "Loading..."}
+      {search ? (
+        search.data.items.map((item) => (
+          <a href={item.repository.url}>{item.repository.name}</a>
+        ))
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 };
